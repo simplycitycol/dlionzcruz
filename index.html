@@ -173,6 +173,11 @@ body{background:#0b0b0a}.hero{min-height:780px;background:radial-gradient(ellips
 .dlc-sound-control[hidden]{display:none}
 .dlc-sound-control{position:fixed;left:max(14px,env(safe-area-inset-left));bottom:max(14px,env(safe-area-inset-bottom));z-index:20;min-height:44px;padding:8px 15px;border:1px solid #d1ad6890;border-radius:999px;background:#170910ee;color:#f8dda2;font:700 12px/1.2 system-ui,sans-serif;cursor:pointer}
 .dlc-sound-control:focus-visible{outline:2px solid #ffdf79;outline-offset:3px}
+</style><style id="dlc-nav-logo-fit">
+.dlc-editorial-nav .dlc-nav-mark{display:grid;place-items:center;min-width:54px;min-height:54px;mix-blend-mode:screen}
+.dlc-editorial-nav .logo-crop{width:55px;height:55px;border-radius:0;filter:contrast(1.45)}
+.dlc-editorial-nav .logo-crop img{width:263%;left:-88.6%;top:-14%}
+@media(max-width:600px){.dlc-editorial-nav .logo-crop{width:52px;height:52px}}
 </style></head><body class="dlc-locked"><div id="dlc-prelude">
   <div class="dlc-curtain left" aria-hidden="true"></div>
   <div class="dlc-curtain right" aria-hidden="true"></div>
@@ -221,8 +226,8 @@ const close=root.querySelector('#close');if(close&&modal)close.addEventListener(
 const hero=root.querySelector('.hero');const roar=root.querySelector('.roar-button');let timer;
 if(hero&&roar)roar.addEventListener('click',()=>{hero.classList.remove('roaring');void hero.offsetWidth;hero.classList.add('roaring');clearTimeout(timer);timer=setTimeout(()=>hero.classList.remove('roaring'),1400)});
 })();
-</script><audio id="dlc-entry-audio" preload="none"></audio>
-<button type="button" id="dlc-sound-control" class="dlc-sound-control" hidden>Reproducir música</button></div><script id="dlc-intro-script">(()=>{const screen=document.getElementById('dlc-intro'),site=document.getElementById('dlc-site'),button=document.getElementById('dlc-enter');if(!screen.inert)button.focus({preventScroll:true});button.addEventListener('click',()=>{screen.classList.add('opening');const finish=()=>{screen.hidden=true;site.inert=false;document.body.classList.remove('dlc-locked');const target=location.hash?document.getElementById(location.hash.slice(1)):null;if(target)target.scrollIntoView();else window.scrollTo(0,0);site.focus({preventScroll:true})};if(matchMedia('(prefers-reduced-motion: reduce)').matches)finish();else setTimeout(finish,1220)},{once:true});screen.addEventListener('keydown',event=>{if(event.key==='Tab'&&!screen.hidden){event.preventDefault();button.focus()}})})();</script><script id="dlc-menu-script">document.querySelectorAll('.dlc-menu a').forEach(link => link.addEventListener('click', () => { link.closest('details').open = false; }));</script><script id="dlc-motion-script">
+</script><audio id="dlc-entry-audio" src="en-ceros.mp3" preload="none"></audio>
+<button type="button" id="dlc-sound-control" class="dlc-sound-control" hidden>Reproducir En Ceros</button></div><script id="dlc-intro-script">(()=>{const screen=document.getElementById('dlc-intro'),site=document.getElementById('dlc-site'),button=document.getElementById('dlc-enter');if(!screen.inert)button.focus({preventScroll:true});button.addEventListener('click',()=>{screen.classList.add('opening');const finish=()=>{screen.hidden=true;site.inert=false;document.body.classList.remove('dlc-locked');const target=location.hash?document.getElementById(location.hash.slice(1)):null;if(target)target.scrollIntoView();else window.scrollTo(0,0);site.focus({preventScroll:true})};if(matchMedia('(prefers-reduced-motion: reduce)').matches)finish();else setTimeout(finish,1220)},{once:true});screen.addEventListener('keydown',event=>{if(event.key==='Tab'&&!screen.hidden){event.preventDefault();button.focus()}})})();</script><script id="dlc-menu-script">document.querySelectorAll('.dlc-menu a').forEach(link => link.addEventListener('click', () => { link.closest('details').open = false; }));</script><script id="dlc-motion-script">
 (() => {
   const site = document.getElementById('dlc-site');
   const entrance = document.getElementById('dlc-enter');
@@ -323,7 +328,7 @@ if(hero&&roar)roar.addEventListener('click',()=>{hero.classList.remove('roaring'
   const enter = document.getElementById('dlc-enter');
   const control = document.getElementById('dlc-sound-control');
   function updateLabel() {
-    control.textContent = audio.paused ? 'Reproducir música' : 'Pausar música';
+    control.textContent = audio.paused ? 'Reproducir En Ceros' : 'Pausar En Ceros';
   }
   function play() {
     audio.play().catch(updateLabel);
