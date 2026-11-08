@@ -229,7 +229,7 @@ const close=root.querySelector('#close');if(close&&modal)close.addEventListener(
 const hero=root.querySelector('.hero');const roar=root.querySelector('.roar-button');let timer;
 if(hero&&roar)roar.addEventListener('click',()=>{hero.classList.remove('roaring');void hero.offsetWidth;hero.classList.add('roaring');clearTimeout(timer);timer=setTimeout(()=>hero.classList.remove('roaring'),1400)});
 })();
-</script><audio id="dlc-entry-audio" src="en-ceros.mp3" preload="none"></audio>
+</script><audio id="dlc-entry-audio" src="en-ceros-mck2.mp3" preload="none"></audio>
 <button type="button" id="dlc-sound-control" class="dlc-sound-control" hidden>Reproducir En Ceros</button></div><script id="dlc-intro-script">(()=>{const screen=document.getElementById('dlc-intro'),site=document.getElementById('dlc-site'),button=document.getElementById('dlc-enter');if(!screen.inert)button.focus({preventScroll:true});button.addEventListener('click',()=>{screen.classList.add('opening');const finish=()=>{screen.hidden=true;site.inert=false;document.body.classList.remove('dlc-locked');const target=location.hash?document.getElementById(location.hash.slice(1)):null;if(target)target.scrollIntoView();else window.scrollTo(0,0);site.focus({preventScroll:true})};if(matchMedia('(prefers-reduced-motion: reduce)').matches)finish();else setTimeout(finish,1220)},{once:true});screen.addEventListener('keydown',event=>{if(event.key==='Tab'&&!screen.hidden){event.preventDefault();button.focus()}})})();</script><script id="dlc-menu-script">document.querySelectorAll('.dlc-menu a').forEach(link => link.addEventListener('click', () => { link.closest('details').open = false; }));</script><script id="dlc-motion-script">
 (() => {
   const site = document.getElementById('dlc-site');
