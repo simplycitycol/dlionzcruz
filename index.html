@@ -198,7 +198,19 @@ body{background:#0b0b0a}.hero{min-height:780px;background:radial-gradient(ellips
 #dlc-site .hero .banner-rose{mix-blend-mode:normal;right:9%;bottom:-115px;width:clamp(160px,29vw,430px)}
 .dlc-film--rose .dlc-film-image{mix-blend-mode:normal}
 @media(max-width:600px){#dlc-site .hero .artist-hero{width:100%;object-position:54% 10%;mask-image:none}#dlc-site .hero .banner-rose{right:-10px;bottom:-98px;width:180px}}
-</style><style id="dlc-torn-curtain">.dlc-film--rose .dlc-film-frame{background:linear-gradient(0deg,#080306d9,transparent 56%,#10050bb0),repeating-linear-gradient(90deg,#210611 0%,#78152c 5%,#410b1e 10%,#1d0610 15%)}#dlc-site .hero .banner-rose:before{content:"";position:absolute;inset:1% -12% 0;background:repeating-linear-gradient(90deg,#290718 0%,#7c1736 8%,#30091c 18%);mask-image:radial-gradient(ellipse at center,#000 18%,transparent 71%);opacity:.62}#dlc-site .hero .banner-rose img{position:relative}#dlc-site .hero .banner-rose{bottom:-72px}@media(max-width:600px){#dlc-site .hero .banner-rose{bottom:-65px}}</style></head><body class="dlc-locked"><div id="dlc-prelude">
+</style><style id="dlc-torn-curtain">.dlc-film--rose .dlc-film-frame{background:linear-gradient(0deg,#080306d9,transparent 56%,#10050bb0),repeating-linear-gradient(90deg,#210611 0%,#78152c 5%,#410b1e 10%,#1d0610 15%)}#dlc-site .hero .banner-rose:before{content:"";position:absolute;inset:1% -12% 0;background:repeating-linear-gradient(90deg,#290718 0%,#7c1736 8%,#30091c 18%);mask-image:radial-gradient(ellipse at center,#000 18%,transparent 71%);opacity:.62}#dlc-site .hero .banner-rose img{position:relative}#dlc-site .hero .banner-rose{bottom:-72px}@media(max-width:600px){#dlc-site .hero .banner-rose{bottom:-65px}}</style><style id="dlc-tear-animation">
+@media(prefers-reduced-motion:no-preference){
+  #dlc-site.motion-ready .hero .banner-rose img{clip-path:polygon(0 0,100% 0,100% 0,0 -32%)}
+  #dlc-site.motion-entered .hero .banner-rose img{animation:dlc-rip-fabric 1.7s .72s cubic-bezier(.26,.56,.42,1) both}
+  .dlc-film--rose .dlc-film-image{--rip-edge:calc(var(--film-progress,0) * 230%);clip-path:polygon(0 0,100% 0,100% var(--rip-edge),0 calc(var(--rip-edge) - 32%))}
+  @keyframes dlc-rip-fabric{
+    0%{clip-path:polygon(0 0,100% 0,100% 0,0 -32%)}
+    42%{clip-path:polygon(0 0,100% 0,100% 53%,0 21%)}
+    52%{clip-path:polygon(0 0,100% 0,100% 57%,0 25%)}
+    100%{clip-path:polygon(0 0,100% 0,100% 132%,0 100%)}
+  }
+}
+</style></head><body class="dlc-locked"><div id="dlc-prelude">
   <div class="dlc-curtain left" aria-hidden="true"></div>
   <div class="dlc-curtain right" aria-hidden="true"></div>
   <p>Haz que pase</p>
